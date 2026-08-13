@@ -1,4 +1,4 @@
-﻿/* ===== CSS VARIABLES - DARK & LIGHT THEMES ===== */
+/* ===== CSS VARIABLES - DARK & LIGHT THEMES ===== */
 :root {
     --accent: #8b5cf6;
     --accent-2: #6d28d9;
@@ -37,7 +37,7 @@
 
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; max-width: 100%; }
 body {
     font-family: var(--font);
     background: var(--bg);
@@ -825,12 +825,27 @@ footer {
     .stats-bar { padding: 20px; }
 }
 @media (max-width: 768px) {
-    .nav-toggle-label { display: block; }
+    /* Hamburger show karo */
+    .nav-toggle-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1010;
+        position: relative;
+    }
+
+    /* Nav container: logo left, hamburger right */
+    .nav-container {
+        position: relative;
+    }
+
+    /* Mobile sliding menu */
     .nav-links {
         position: fixed;
-        top: 0; right: -100%;
+        top: 0;
+        right: -110%;
         height: 100vh;
-        width: 280px;
+        width: min(280px, 80vw);
         background: var(--bg-card);
         border-left: 1px solid var(--border);
         flex-direction: column;
@@ -838,16 +853,28 @@ footer {
         align-items: center;
         transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         gap: 16px;
-        z-index: 1000;
+        z-index: 1005;
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        overflow-y: auto;
     }
-    .nav-link { font-size: 1.1rem; padding: 12px 24px; width: 100%; text-align: center; }
+    .nav-toggle:checked ~ .nav-container .nav-links,
     .nav-toggle:checked ~ .nav-links { right: 0; }
-    .profile-ring { width: 260px; height: 260px; }
-    .profile-ring-inner { width: 230px; height: 230px; }
-    .ring-orbit { width: 260px; height: 260px; }
-    .badge-flutter { bottom: 0; left: -10px; }
-    .badge-firebase { top: 0; right: -10px; }
+    .nav-link { font-size: 1.1rem; padding: 12px 24px; width: 100%; text-align: center; }
+
+    /* Profile ring - thoda chota aur overflow nahi */
+    .profile-ring { width: 240px; height: 240px; }
+    .profile-ring-inner { width: 210px; height: 210px; }
+    .ring-orbit { width: 240px; height: 240px; }
+
+    /* Floating badges - viewport ke andar rakho */
+    .floating-badge { font-size: 0.72rem; padding: 8px 12px; white-space: nowrap; }
+    .badge-flutter { bottom: 0; left: 0; }
+    .badge-firebase { top: 0; right: 0; }
+
+    /* Hero image wrap overflow hide */
+    .hero-image-wrap { overflow: visible; padding: 20px; }
+
     .stats-bar { flex-wrap: wrap; gap: 20px; }
     .stat-divider { display: none; }
     .stat-item { width: 45%; }
@@ -856,10 +883,21 @@ footer {
     .form-row { grid-template-columns: 1fr; }
     section { padding: 80px 5%; }
     .contact-form-wrap { padding: 24px; }
+
+    /* Work cards full width */
+    .work-card { padding: 24px; }
+    .cert-grid { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 480px) {
     header { padding: 80px 5% 30px; }
-    .hero-badge { font-size: 0.68rem; }
+    .hero-badge { font-size: 0.68rem; padding: 5px 12px; }
     .stats-bar { padding: 16px; }
     .stat-number { font-size: 1.8rem; }
+    .profile-ring { width: 200px; height: 200px; }
+    .profile-ring-inner { width: 175px; height: 175px; }
+    .ring-orbit { width: 200px; height: 200px; }
+    .badge-flutter { display: none; }
+    .badge-firebase { display: none; }
+    .hero-image-wrap { padding: 10px; }
 }
