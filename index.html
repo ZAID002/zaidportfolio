@@ -1,194 +1,329 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaid Ul Haq | Software Engineer</title>
+    <title>Zaid Ul Haq | Flutter Developer</title>
+    <meta name="description" content="Zaid Ul Haq - Flutter Developer specializing in cross-platform mobile apps and web applications.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    <canvas id="particles-canvas"></canvas>
 
-    <nav>
-        <div class="logo">ZAID UL HAQ<span>.</span></div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
-        
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Work</a>
-            <a href="#certifications">Certificates</a>
-            <a href="#contact" class="nav-cta">Let's Talk</a>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo"><span class="logo-bracket">&lt;</span>ZaidUlHaq<span class="logo-bracket">/&gt;</span></div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation"><span></span></label>
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Work</a>
+                <a href="#certifications" class="nav-link">Certs</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon sun">&#9728;</span>
+                    <span class="theme-icon moon">&#9790;</span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <header id="home">
-        <div class="hero-tag">Specializing in Cross-Platform Solutions</div>
-        <h1>Building Digital <span class="gradient-text">Experiences</span> with Flutter.</h1>
-        <p>I help businesses turn complex ideas into high-performance, beautiful mobile and web applications.</p>
-        <div class="hero-actions">
-            <a href="#projects" class="btn-main">View Projects</a>
-            <a href="#about" class="btn-sub">Learn More</a>
+        <div class="hero-container">
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="900">
+                <div class="hero-badge"><span class="badge-dot"></span>Available for Freelance &amp; Full-time</div>
+                <h1>Hi, I'm <span class="gradient-text">Zaid Ul Haq</span></h1>
+                <div class="typed-wrapper">
+                    <span class="typed-prefix">I build </span>
+                    <span class="typed-text" id="typed-text"></span>
+                    <span class="typed-cursor">|</span>
+                </div>
+                <p class="hero-desc">A results-driven <strong>Flutter Developer</strong> helping businesses turn complex ideas into high-performance, beautiful mobile and web applications.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-main"><span>View My Work</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#contact" class="btn-sub">Let's Talk &rarr;</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/ZAID002" target="_blank" class="social-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="mailto:zaidch032@gmail.com" class="social-link" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                </div>
+            </div>
+            <div class="hero-image-wrap" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+                <div class="profile-ring">
+                    <div class="profile-ring-inner">
+                        <img src="profile.jpg" alt="Zaid Ul Haq - Flutter Developer" class="profile-img">
+                    </div>
+                    <div class="ring-orbit"><div class="orbit-dot"></div></div>
+                </div>
+                <div class="floating-badge badge-flutter" data-aos="zoom-in" data-aos-delay="600"><span>&#9889;</span> Flutter Expert</div>
+                <div class="floating-badge badge-firebase" data-aos="zoom-in" data-aos-delay="800"><span>&#128293;</span> Firebase</div>
+            </div>
+        </div>
+        <div class="stats-bar" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-item"><span class="stat-number" data-count="6">0</span><span>+</span><span class="stat-label">Projects</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><span class="stat-number" data-count="3">0</span><span>+</span><span class="stat-label">Certifications</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><span class="stat-number" data-count="2">0</span><span>+</span><span class="stat-label">Years Exp.</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><span class="stat-number" data-count="100">0</span><span>%</span><span class="stat-label">Passion</span></div>
         </div>
     </header>
 
     <section id="about">
-        <div class="section-header">
-            <span class="sub-title">Expertise</span>
+        <div class="section-header" data-aos="fade-up">
+            <span class="sub-title">// expertise</span>
             <h2>The Tech Stack</h2>
         </div>
-        <div class="skills-container">
-            <div class="skill-tag">Flutter</div>
-            <div class="skill-tag">Dart</div>
-            <div class="skill-tag">Firebase</div>
-            <div class="skill-tag">UI/UX Design</div>
-            <div class="skill-tag">REST APIs</div>
-            <div class="skill-tag">Git & GitHub</div>
+        <div class="about-grid">
+            <div class="about-bio" data-aos="fade-right">
+                <p>I am a results-driven <strong>Flutter Developer</strong> focused on clean code and scalable architectures. I ensure every pixel serves a purpose and every interaction feels natural.</p>
+                <p>From <strong>mobile apps</strong> to <strong>data science dashboards</strong> and <strong>real-time platforms</strong> - I bring ideas to life with modern technologies and best practices.</p>
+                <a href="#contact" class="btn-main" style="display:inline-flex;margin-top:25px;"><span>Hire Me</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="skills-grid" data-aos="fade-left">
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="0"><div class="skill-icon">&#128241;</div><div class="skill-info"><span class="skill-name">Flutter</span><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div></div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="80"><div class="skill-icon">&#127919;</div><div class="skill-info"><span class="skill-name">Dart</span><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div></div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="160"><div class="skill-icon">&#128293;</div><div class="skill-info"><span class="skill-name">Firebase</span><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div></div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="240"><div class="skill-icon">&#127912;</div><div class="skill-info"><span class="skill-name">UI/UX Design</span><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div></div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="320"><div class="skill-icon">&#128279;</div><div class="skill-info"><span class="skill-name">REST APIs</span><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div></div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="400"><div class="skill-icon">&#128025;</div><div class="skill-info"><span class="skill-name">Git &amp; GitHub</span><div class="skill-bar"><div class="skill-fill" data-width="86"></div></div></div></div>
+            </div>
         </div>
-        <p class="about-text">
-            I am a results-driven <strong>Flutter Developer</strong> focused on clean code and scalable architectures. I ensure every pixel serves a purpose and every interaction feels natural.
-        </p>
     </section>
 
-    <section id="projects">
-        <div class="section-header">
-            <span class="sub-title">Portfolio</span>
+    <section id="projects" class="section-alt">
+        <div class="section-header" data-aos="fade-up">
+            <span class="sub-title">// portfolio</span>
             <h2>Selected Works</h2>
         </div>
         <div class="work-grid">
-            <div class="work-card">
-                <div class="card-icon">💊</div>
+            <div class="work-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="card-top"><div class="card-icon-wrap">&#128138;</div><a href="https://github.com/ZAID002/Pharmalink" target="_blank" class="card-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a></div>
                 <h3>PharmaLink</h3>
                 <p>Location-aware healthcare platform connecting patients with verified local pharmacies. Features prescription verification, distance delivery, and live chat.</p>
-                <div class="project-tags">
-                    <span class="tag">React</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express</span>
-                    <span class="tag">MongoDB</span>
-                </div>
-                <a href="https://github.com/ZAID002/Pharmalink" target="_blank" class="project-link">View Code &rarr;</a>
+                <div class="project-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span></div>
             </div>
-            <div class="work-card">
-                <div class="card-icon">⚡</div>
+            <div class="work-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-top"><div class="card-icon-wrap">&#9889;</div><a href="https://github.com/ZAID002/smart-household-energy-analytics" target="_blank" class="card-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a></div>
                 <h3>Smart Energy Analytics</h3>
-                <p>Industrial Data Science web dashboard and forecasting pipeline analyzing household power consumption using Decision Trees, ARIMA, and Prophet models.</p>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">ARIMA</span>
-                    <span class="tag">Prophet</span>
-                    <span class="tag">Data Science</span>
-                </div>
-                <a href="https://github.com/ZAID002/smart-household-energy-analytics" target="_blank" class="project-link">View Code &rarr;</a>
+                <p>Industrial Data Science dashboard and forecasting pipeline analyzing household power consumption using Decision Trees, ARIMA, and Prophet models.</p>
+                <div class="project-tags"><span class="tag">Python</span><span class="tag">ARIMA</span><span class="tag">Prophet</span><span class="tag">Data Science</span></div>
             </div>
-            <div class="work-card">
-                <div class="card-icon">⏱️</div>
-                <h3>Time & Task Tracker</h3>
+            <div class="work-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-top"><div class="card-icon-wrap">&#9201;</div><a href="https://github.com/ZAID002/Time-task-Tracking_app" target="_blank" class="card-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a></div>
+                <h3>Time &amp; Task Tracker</h3>
                 <p>Cross-platform mobile application for tracking daily tasks and productivity time, built for performance and clean offline state management.</p>
-                <div class="project-tags">
-                    <span class="tag">Flutter</span>
-                    <span class="tag">Dart</span>
-                    <span class="tag">SQLite</span>
-                    <span class="tag">Riverpod</span>
-                </div>
-                <a href="https://github.com/ZAID002/Time-task-Tracking_app" target="_blank" class="project-link">View Code &rarr;</a>
+                <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">SQLite</span><span class="tag">Riverpod</span></div>
             </div>
-            <div class="work-card">
-                <div class="card-icon">💬</div>
+            <div class="work-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-top"><div class="card-icon-wrap">&#128172;</div><a href="https://github.com/ZAID002/chatting-application" target="_blank" class="card-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a></div>
                 <h3>Plus Zee Chat</h3>
                 <p>Real-time messaging mobile application with Firebase backend, instant synchronization, and secure user authentication.</p>
-                <div class="project-tags">
-                    <span class="tag">Flutter</span>
-                    <span class="tag">Dart</span>
-                    <span class="tag">Firebase</span>
-                </div>
-                <a href="https://github.com/ZAID002/chatting-application" target="_blank" class="project-link">View Code &rarr;</a>
+                <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span></div>
             </div>
-            <div class="work-card">
-                <div class="card-icon">📄</div>
+            <div class="work-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-top"><div class="card-icon-wrap">&#128196;</div><a href="https://github.com/ZAID002/business-card-cv_maker" target="_blank" class="card-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a></div>
                 <h3>CV Maker Pro</h3>
                 <p>Automated resume engine with professional PDF exporting capabilities, focusing on clean design and intuitive layouts.</p>
-                <div class="project-tags">
-                    <span class="tag">Flutter</span>
-                    <span class="tag">Dart</span>
-                    <span class="tag">PDF Engine</span>
-                </div>
-                <a href="https://github.com/ZAID002/business-card-cv_maker" target="_blank" class="project-link">View Code &rarr;</a>
+                <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">PDF Engine</span></div>
             </div>
-            <div class="work-card">
-                <div class="card-icon">💳</div>
+            <div class="work-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="card-top"><div class="card-icon-wrap">&#128179;</div><a href="https://github.com/ZAID002/business-card" target="_blank" class="card-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a></div>
                 <h3>Business Card AI</h3>
                 <p>Digital identity tool and virtual card generator designed for modern professional networking and fast information exchange.</p>
-                <div class="project-tags">
-                    <span class="tag">Flutter</span>
-                    <span class="tag">Dart</span>
-                    <span class="tag">REST APIs</span>
-                </div>
-                <a href="https://github.com/ZAID002/business-card" target="_blank" class="project-link">View Code &rarr;</a>
+                <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">REST APIs</span></div>
             </div>
         </div>
     </section>
 
     <section id="certifications">
-        <div class="section-header">
-            <span class="sub-title">Verified Skills</span>
-            <h2>Professional Certifications</h2>
+        <div class="section-header" data-aos="fade-up">
+            <span class="sub-title">// verified skills</span>
+            <h2>Certifications</h2>
         </div>
         <div class="cert-grid">
-            <div class="cert-card">
-                <div class="cert-badge">🏆</div>
-                <div>
-                    <span class="issuer">IBM</span>
-                    <h3>Flutter & Dart</h3>
-                </div>
-            </div>
-            <div class="cert-card">
-                <div class="cert-badge">🎓</div>
-                <div>
-                    <span class="issuer">Google</span>
-                    <h3>UX Design</h3>
-                </div>
-            </div>
-            <div class="cert-card">
-                <div class="cert-badge">🛡️</div>
-                <div>
-                    <span class="issuer">Google</span>
-                    <h3>Git & GitHub</h3>
-                </div>
-            </div>
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="0"><div class="cert-badge-wrap"><span class="cert-emoji">&#127942;</span></div><div class="cert-info"><span class="issuer">IBM</span><h3>Flutter &amp; Dart</h3><p class="cert-desc">Mobile development with Flutter framework and Dart language</p></div></div>
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="150"><div class="cert-badge-wrap"><span class="cert-emoji">&#127891;</span></div><div class="cert-info"><span class="issuer">Google</span><h3>UX Design</h3><p class="cert-desc">User experience design principles and research methodologies</p></div></div>
+            <div class="cert-card" data-aos="flip-left" data-aos-delay="300"><div class="cert-badge-wrap"><span class="cert-emoji">&#128737;</span></div><div class="cert-info"><span class="issuer">Google</span><h3>Git &amp; GitHub</h3><p class="cert-desc">Version control and collaborative development workflows</p></div></div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-box">
-            <h2>Start a Project</h2>
-            <p>Have an idea? Let's build something exceptional together.</p>
-            <form name="contact" method="POST" netlify>
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
+    <section id="contact" class="section-alt">
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+                <span class="sub-title">// contact</span>
+                <h2>Let's Build Something Great</h2>
+                <p>Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you as soon as possible.</p>
+                <div class="contact-details">
+                    <a href="mailto:zaidch032@gmail.com" class="contact-detail-item"><div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><span>zaidch032@gmail.com</span></a>
+                    <a href="https://github.com/ZAID002" target="_blank" class="contact-detail-item"><div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div><span>github.com/ZAID002</span></a>
                 </div>
-                <textarea name="message" rows="4" placeholder="Message" required></textarea>
-                <button type="submit">Send Inquiry</button>
-            </form>
+            </div>
+            <div class="contact-form-wrap" data-aos="fade-left" data-aos-duration="800">
+                <form id="contact-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-field"><label for="from_name">Name</label><input type="text" id="from_name" name="from_name" placeholder="Your name" required autocomplete="name"></div>
+                        <div class="form-field"><label for="reply_to">Email</label><input type="email" id="reply_to" name="reply_to" placeholder="your@email.com" required autocomplete="email"></div>
+                    </div>
+                    <div class="form-field"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Project Inquiry / Collaboration" required></div>
+                    <div class="form-field"><label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea></div>
+                    <button type="submit" class="btn-submit" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loader" style="display:none;"><span class="loader-dot"></span><span class="loader-dot"></span><span class="loader-dot"></span></span>
+                        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Zaid Ul Haq. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>ZaidUlHaq<span class="logo-bracket">/&gt;</span></div>
+            <p class="footer-desc">Building digital experiences, one line at a time.</p>
+            <div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#projects">Work</a><a href="#contact">Contact</a></div>
+            <p class="footer-copy">&copy; 2026 Zaid Ul Haq. Crafted with &#10084;&#65039;</p>
+        </div>
     </footer>
-        <script>
-        const navLinks = document.querySelectorAll('.nav-links a');
-        const navToggle = document.getElementById('nav-toggle');
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.checked = false; // menu close
-            });
-        });
+    <div class="toast" id="toast"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({ once: true, offset: 80, easing: 'ease-out-cubic' });
+    emailjs.init('CQZvwMQH1WdsBMBbl');
+
+    // Theme Toggle
+    const html = document.documentElement;
+    const themeBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    themeBtn.addEventListener('click', () => {
+        const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    });
+
+    // Custom Cursor
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursor-follower');
+    let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
+    });
+    function animateFollower() {
+        followerX += (mouseX - followerX) * 0.12;
+        followerY += (mouseY - followerY) * 0.12;
+        follower.style.left = followerX + 'px'; follower.style.top = followerY + 'px';
+        requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+    document.querySelectorAll('a, button, .work-card, .skill-item').forEach(el => {
+        el.addEventListener('mouseenter', () => { cursor.classList.add('cursor-hover'); follower.classList.add('follower-hover'); });
+        el.addEventListener('mouseleave', () => { cursor.classList.remove('cursor-hover'); follower.classList.remove('follower-hover'); });
+    });
+
+    // Particles
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    class Particle {
+        constructor() { this.reset(); }
+        reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 1.5 + 0.3; this.speedX = (Math.random() - 0.5) * 0.4; this.speedY = (Math.random() - 0.5) * 0.4; this.opacity = Math.random() * 0.5 + 0.1; }
+        update() { this.x += this.speedX; this.y += this.speedY; if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset(); }
+        draw() { const isDark = html.getAttribute('data-theme') === 'dark'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = isDark ? `rgba(139,92,246,${this.opacity})` : `rgba(79,70,229,${this.opacity * 0.5})`; ctx.fill(); }
+    }
+    for (let i = 0; i < 80; i++) particles.push(new Particle());
+    function drawConnections() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 100) { const isDark = html.getAttribute('data-theme') === 'dark'; ctx.beginPath(); ctx.strokeStyle = isDark ? `rgba(139,92,246,${0.15*(1-dist/100)})` : `rgba(79,70,229,${0.08*(1-dist/100)})`; ctx.lineWidth = 0.5; ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
+            }
+        }
+    }
+    function animateParticles() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); drawConnections(); requestAnimationFrame(animateParticles); }
+    animateParticles();
+
+    // Typed Text
+    const words = ['Flutter Apps.', 'Mobile Experiences.', 'Firebase Solutions.', 'Beautiful UIs.', 'Cross-Platform Apps.'];
+    let wordIndex = 0, charIndex = 0, isDeleting = false;
+    const typedEl = document.getElementById('typed-text');
+    function typeEffect() {
+        const current = words[wordIndex];
+        if (isDeleting) { typedEl.textContent = current.substring(0, charIndex--); } else { typedEl.textContent = current.substring(0, charIndex++); }
+        if (!isDeleting && charIndex === current.length + 1) { isDeleting = true; setTimeout(typeEffect, 1800); return; }
+        if (isDeleting && charIndex === 0) { isDeleting = false; wordIndex = (wordIndex + 1) % words.length; }
+        setTimeout(typeEffect, isDeleting ? 60 : 100);
+    }
+    typeEffect();
+
+    // Counter Animation
+    function animateCounter(el) {
+        const target = parseInt(el.getAttribute('data-count'));
+        const start = performance.now();
+        const update = (time) => { const p = Math.min((time - start) / 2000, 1); const ease = 1 - Math.pow(1 - p, 3); el.textContent = Math.floor(ease * target); if (p < 1) requestAnimationFrame(update); else el.textContent = target; };
+        requestAnimationFrame(update);
+    }
+    const statsObserver = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { document.querySelectorAll('.stat-number').forEach(animateCounter); statsObserver.disconnect(); } }); }, { threshold: 0.5 });
+    const statsBar = document.querySelector('.stats-bar');
+    if (statsBar) statsObserver.observe(statsBar);
+
+    // Skill Bars
+    const skillObserver = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { document.querySelectorAll('.skill-fill').forEach(bar => { setTimeout(() => { bar.style.width = bar.getAttribute('data-width') + '%'; }, 200); }); skillObserver.disconnect(); } }); }, { threshold: 0.3 });
+    const skillsGrid = document.querySelector('.skills-grid');
+    if (skillsGrid) skillObserver.observe(skillsGrid);
+
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+
+    // Mobile Nav Close
+    document.querySelectorAll('.nav-link').forEach(link => { link.addEventListener('click', () => { document.getElementById('nav-toggle').checked = false; }); });
+
+    // Active Nav
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.nav-link');
+    new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { const id = e.target.getAttribute('id'); navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id)); } }); }, { threshold: 0.3 }).observe;
+    sections.forEach(s => { new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)); } }); }, { threshold: 0.3 }).observe(s); });
+
+    // Contact Form
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const toast = document.getElementById('toast');
+    function showToast(msg, type) { toast.textContent = msg; toast.className = 'toast toast-' + type + ' show'; setTimeout(() => toast.classList.remove('show'), 4000); }
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoader = submitBtn.querySelector('.btn-loader');
+        const btnArrow = submitBtn.querySelector('.btn-arrow');
+        btnText.style.display = 'none'; btnLoader.style.display = 'inline-flex'; btnArrow.style.display = 'none'; submitBtn.disabled = true;
+        try {
+            await emailjs.sendForm('service_d1pbdxb', 'template_6nm86de', form);
+            showToast('Message sent! I will get back to you soon.', 'success');
+            form.reset();
+        } catch (error) {
+            const name = document.getElementById('from_name').value;
+            const email = document.getElementById('reply_to').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            window.open('mailto:zaidch032@gmail.com?subject=' + encodeURIComponent(subject || 'Portfolio Inquiry') + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message), '_blank');
+            showToast('Opening your email client...', 'info');
+        } finally { btnText.style.display = 'inline'; btnLoader.style.display = 'none'; btnArrow.style.display = 'inline'; submitBtn.disabled = false; }
+    });
     </script>
-</body>
-</html>
-
 </body>
 </html>
